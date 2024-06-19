@@ -18,6 +18,8 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 ## Variable Environnement
 
+Create file .env.local
+
 ### Firebase
 
 NEXT_PUBLIC_FIREBASE_API_KEY= \Variable\
@@ -34,3 +36,7 @@ NEXT_PUBLIC_SENDGRID_API_KEY= \Variable\
 
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY= \Variable\
 NEXT_PUBLIC_STRIPE_SECRET_KEY= \Variable\
+
+### Google Tag
+
+NEXT_PUBLIC_GTM_ID= \Variable\
