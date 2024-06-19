@@ -1,3 +1,5 @@
+import { StoreProvider } from "@/redux/StoreProvider";
+import { GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -14,9 +16,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const GTM = process.env.NEXT_PUBLIC_GTM_ID ?? "";
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <StoreProvider>
+      <html lang="fr">
+        <head>
+          <link rel="icon" href="/logo.png" sizes="any" />
+        </head>
+        <body className={inter.className}>{children}</body>
+        <GoogleTagManager gtmId={GTM} />
+      </html>
+    </StoreProvider>
   );
 }
