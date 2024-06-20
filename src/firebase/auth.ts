@@ -4,6 +4,7 @@ import {
   getAuth,
   onAuthStateChanged,
   sendPasswordResetEmail,
+  signInWithEmailAndPassword,
   signOut,
   User,
 } from "firebase/auth"; // Importation des fonctions d'authentification Firebase nécessaires
@@ -17,16 +18,47 @@ import { auth } from "./firebase.config"; // Importation de l'authentification F
  */
 export const signUp = async (email: string, password: string) => {
   try {
-    // Utilise la fonction Firebase createUserWithEmailAndPassword pour créer un utilisateur
+    if (!validateEmail(email)) {
+      throw new Error("Invalid email format");
+    }
+
+    if (!validatePassword(password)) {
+      throw new Error("Password does not meet the criteria");
+    }
+
     const userCredential = await createUserWithEmailAndPassword(
       auth,
       email,
       password
     );
-    return userCredential.user; // Retourne l'utilisateur créé
+    return userCredential.user;
   } catch (error) {
-    console.error("Error creating new user:", error); // Affiche une erreur en cas d'échec
-    throw error; // Relance l'erreur pour être gérée par l'appelant
+    console.error("Error creating new user:", error);
+    throw error;
+  }
+};
+
+/**
+ * Fonction pour connecter un utilisateur avec Firebase Authentication.
+ * @param email - L'email de l'utilisateur
+ * @param password - Le mot de passe de l'utilisateur
+ * @returns L'utilisateur connecté ou une erreur en cas d'échec
+ */
+export const signIn = async (email: string, password: string) => {
+  try {
+    if (!validateEmail(email)) {
+      throw new Error("Invalid email format");
+    }
+
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    return userCredential.user;
+  } catch (error) {
+    console.error("Error signing in user:", error);
+    throw error;
   }
 };
 
@@ -37,15 +69,15 @@ export const signUp = async (email: string, password: string) => {
  */
 export const deleteAccount = async (uid: string) => {
   try {
-    const user = getAuth().currentUser; // Récupère l'utilisateur actuellement connecté
+    const user = getAuth().currentUser;
     if (user && user.uid === uid) {
-      await deleteUser(user); // Supprime l'utilisateur
+      await deleteUser(user);
     } else {
       throw new Error("User not authenticated or UID does not match");
     }
   } catch (error) {
-    console.error("Error deleting user:", error); // Affiche une erreur en cas d'échec
-    throw error; // Relance l'erreur pour être gérée par l'appelant
+    console.error("Error deleting user:", error);
+    throw error;
   }
 };
 
@@ -61,13 +93,13 @@ export const getUserInfo = (): Promise<User | null> => {
       authInstance,
       (user) => {
         if (user) {
-          resolve(user); // Retourne les informations de l'utilisateur connecté
+          resolve(user);
         } else {
-          resolve(null); // Retourne null si aucun utilisateur n'est connecté
+          resolve(null);
         }
       },
       (error) => {
-        reject(error); // Relance l'erreur pour être gérée par l'appelant
+        reject(error);
       }
     );
   });
@@ -80,6 +112,10 @@ export const getUserInfo = (): Promise<User | null> => {
  */
 export const resetPassword = async (email: string) => {
   try {
+    if (!validateEmail(email)) {
+      throw new Error("Invalid email format");
+    }
+
     await sendPasswordResetEmail(auth, email);
     console.log("Password reset email sent");
   } catch (error) {
@@ -100,4 +136,36 @@ export const logOut = async () => {
     console.error("Error signing out:", error);
     throw error;
   }
+};
+
+/**
+ * Fonction pour vérifier si un utilisateur est connecté.
+ * @returns Une promesse résolue avec un booléen indiquant si un utilisateur est actuellement connecté
+ */
+export const isUserLoggedIn = (): Promise<boolean> => {
+  return new Promise((resolve) => {
+    const authInstance = getAuth();
+    onAuthStateChanged(authInstance, (user) => {
+      resolve(!!user);
+    });
+  });
+};
+/**
+ * Fonction pour valider le format de l'email.
+ * @param email - L'email à valider
+ * @returns Un booléen indiquant si l'email est valide ou non
+ */
+const validateEmail = (email: string): boolean => {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+};
+
+/**
+ * Fonction pour valider les critères du mot de passe.
+ * @param password - Le mot de passe à valider
+ * @returns Un booléen indiquant si le mot de passe est valide ou non
+ */
+const validatePassword = (password: string): boolean => {
+  // Par exemple, le mot de passe doit contenir au moins 6 caractères
+  return password.length >= 6;
 };
