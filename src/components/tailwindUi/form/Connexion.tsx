@@ -3,11 +3,18 @@
 "use client";
 
 import { Toaster } from "@/components/ui/sonner"; // Importez votre composant Toaster
-import { signUp } from "@/firebase/auth"; // Importez la fonction signUp depuis son chemin
+import { signIn } from "@/firebase/auth";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner"; // Assurez-vous que l'importation est correcte
 
-const ConnexionForm: React.FC = () => {
+interface ConnexionFormProps {
+  title?: string;
+  href?: string;
+}
+
+const ConnexionForm: React.FC<ConnexionFormProps> = ({ title, href }) => {
+  const router = useRouter();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
@@ -42,7 +49,8 @@ const ConnexionForm: React.FC = () => {
     }
 
     try {
-      await signUp(email, password);
+      await signIn(email, password);
+      router.push(href || "/user/tableau-de-bord");
       // Redirection ou autres actions après connexion réussie
     } catch (error) {
       setError("Échec de la connexion. Veuillez vérifier vos informations.");
@@ -60,7 +68,7 @@ const ConnexionForm: React.FC = () => {
           alt="Your Company"
         />
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-          Connectez-vous à votre espace
+          {title ? title : "Connectez-vous à votre espace"}
         </h2>
       </div>
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -96,7 +104,7 @@ const ConnexionForm: React.FC = () => {
               </label>
               <div className="text-sm">
                 <a
-                  href="/user/changer-le-mot-de-passe"
+                  href="/changer-le-mot-de-passe"
                   className="font-semibold text-indigo-600 hover:text-indigo-500"
                 >
                   Mot de passe oublié ?
@@ -129,7 +137,7 @@ const ConnexionForm: React.FC = () => {
         <p className="mt-10 text-center text-sm text-gray-500">
           Pas encore inscrit ?{" "}
           <a
-            href="#"
+            href="/"
             className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
           >
             Publiez votre projet
