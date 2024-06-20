@@ -6,7 +6,7 @@ import { resetPassword } from "@/firebase/auth"; // Importez la fonction resetPa
 import { useState } from "react";
 import { Toaster, toast } from "sonner"; // Assurez-vous que l'importation est correcte
 
-const ChangePasseword: React.FC = () => {
+const ChangePasseword: React.FC = ({ href }: { href?: string }) => {
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>("");
 
@@ -86,7 +86,7 @@ const ChangePasseword: React.FC = () => {
         <p className="mt-10 text-center text-sm text-gray-500">
           Vous souvenez-vous de votre mot de passe ?{" "}
           <a
-            href="/user/connexion"
+            href={href ? href : "/user/connexion"}
             className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
           >
             Connectez-vous
