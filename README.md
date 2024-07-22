@@ -1,3 +1,24 @@
+## Clone project
+
+```bash
+Aller sur le dossier du projet créer
+
+git clone https://github.com/magicniclus/bigprojet.git .
+
+npm i
+
+git remote rm origin
+
+git remote add origin url_de_votre_nouveau_repo
+
+git add .
+
+git commit -m "Initial commit: Clone landingPage template"
+
+git push -u origin main
+
+```
+
 ## Getting Started
 
 First, run the development server:
