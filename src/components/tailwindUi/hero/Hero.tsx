@@ -54,7 +54,7 @@ const Hero = () => {
         alt="background"
         className="w-full h-full absolute top-0 right-0 object-cover rounded-b-[40px] z-0"
       />
-      <div className="bg-slate-700/70 absolute top-0 right-0 w-full h-full rounded-b-[40px] z-0"></div>
+      <div className="bg-slate-900/70 absolute top-0 right-0 w-full h-full rounded-b-[40px] z-0"></div>
       <div className="relative text-center h-full min-h-[500px] w-full flex justify-center flex-col items-center text-white text-3xl z-10">
         <div className="relative mt-10">
           <h1 ref={h1Ref} className="px-2">
@@ -73,7 +73,7 @@ const Hero = () => {
         <a
           ref={buttonRef}
           href="#"
-          className="px-6 py-2 border border-white rounded-full text-white text-base mt-10 hover:border-[#947a2f] hover:bg-[#947a2f] hover:text-white transition duration-300 ease-in-out z-20"
+          className="px-6 py-2 border border-[#947a2f] bg-[#947a2f] rounded-full text-white text-base mt-10 hover:border-[#947a2f] hover:bg-white hover:text-[#947a2f] transition duration-300 ease-in-out z-20"
         >
           Prendre rendez-vous
         </a>
