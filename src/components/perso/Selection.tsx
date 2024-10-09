@@ -1,6 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const contain = [
   {
     image:
@@ -61,7 +66,7 @@ const contain = [
 const Selection = () => {
   return (
     <section className="w-full">
-      <div className="max-w-5xl mx-auto w-full py-32 px-2">
+      <div className="max-w-7xl mx-auto w-full py-32">
         <div className="relative max-w-max mx-auto text-3xl">
           <h2 className="text-gray-700 text-center">
             <span className="sm:hidden block text-gray-700/60 text-xl font-light font-updock ">
@@ -69,7 +74,7 @@ const Selection = () => {
             </span>
             Selection d&apos;annonce
           </h2>
-          <h3 className="font-light font-updock text-gray-700/60 absolute -right-10 -bottom-7 sm:block hidden">
+          <h3 className="font-light font-updock text-[#947a2f]/60 absolute -right-10 -bottom-7 sm:block hidden">
             Le meilleur
           </h3>
         </div>
@@ -78,7 +83,7 @@ const Selection = () => {
             <a
               href={item.link}
               key={index}
-              className=" rounded-lg overflow-hidden transition-shadow duration-300 relative"
+              className=" rounded-lg overflow-hidden transition-shadow duration-300 relative group"
             >
               <div className="absolute top-2 left-2 rounded-full p-1 bg-gray-700 text-white text-xs px-2">
                 Nouveauté
@@ -89,7 +94,7 @@ const Selection = () => {
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-[350px] rounded-lg object-cover"
+                className="w-full h-[350px] rounded-lg object-cover group-hover:scale-2"
               />
               <div className="py-4">
                 <p className="text-[#947a2f] mt-2">{item.prix} €</p>
@@ -105,6 +110,14 @@ const Selection = () => {
               </div>
             </a>
           ))}
+        </div>
+        <div className="w-full flex justify-center">
+          <a
+            href="#"
+            className="p-4 px-4 text-white text-sm rounded-lg bg-[#947a2f] mx-auto mt-12 hover:text-[#947a2f] hover:bg-white hover:border hover:border-[#947a2f] transition duration-300 ease-in-out"
+          >
+            Vous souhaitez obtenir une estimation ?
+          </a>
         </div>
       </div>
     </section>
