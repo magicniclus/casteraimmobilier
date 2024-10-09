@@ -66,7 +66,7 @@ const contain = [
 const Selection = () => {
   return (
     <section className="w-full">
-      <div className="max-w-7xl mx-auto w-full py-32">
+      <div className="max-w-7xl mx-auto w-full py-32 px-4">
         <div className="relative max-w-max mx-auto text-3xl">
           <h2 className="text-gray-700 text-center">
             <span className="sm:hidden block text-gray-700/60 text-xl font-light font-updock ">
