@@ -1,10 +1,21 @@
 import { StoreProvider } from "@/redux/StoreProvider";
 import { GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins, Updock } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+// Configuration de la police Poppins
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "400", "700"], // Poids disponibles pour Poppins
+  style: ["normal", "italic"],
+});
+
+// Configuration de la police Updock
+const updock = Updock({
+  subsets: ["latin"],
+  weight: "400", // Poids disponible pour Updock
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,9 +32,15 @@ export default function RootLayout({
     <StoreProvider>
       <html lang="fr">
         <head>
-          <link rel="icon" href="/logo.png" sizes="any" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+          />
+          <link rel="icon" href="/favicon-c-white.png" sizes="any" />
         </head>
-        <body className={inter.className}>{children}</body>
+        <body className={`${poppins.className}`}>{children}</body>
         <GoogleTagManager gtmId={GTM} />
       </html>
     </StoreProvider>
