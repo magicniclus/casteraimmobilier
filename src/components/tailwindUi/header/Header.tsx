@@ -34,7 +34,7 @@ export default function Example() {
   return (
     <header
       className={`fixed w-full z-50 transition-colors duration-300 font-poppins font-light ${
-        isScrolled ? "bg-white" : "bg-transparent"
+        isScrolled ? "bg-white/95" : "bg-transparent"
       }`}
     >
       <nav
