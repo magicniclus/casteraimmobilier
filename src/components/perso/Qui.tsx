@@ -2,7 +2,7 @@
 const Qui = () => {
   return (
     <section className="w-full">
-      <div className="w-full max-w-7xl mx-auto py-32">
+      <div className="w-full max-w-7xl mx-auto py-32 px-4">
         <div className="flex">
           <div className="relative flex items-center">
             <img
