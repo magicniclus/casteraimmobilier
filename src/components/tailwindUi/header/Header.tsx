@@ -33,7 +33,7 @@ export default function Example() {
 
   return (
     <header
-      className={`fixed w-full z-100 transition-colors duration-300 font-poppins font-light ${
+      className={`fixed w-full z-50 transition-colors duration-300 font-poppins font-light ${
         isScrolled ? "bg-white" : "bg-transparent"
       }`}
     >
@@ -66,15 +66,18 @@ export default function Example() {
             </button>
           </div>
         </div>
-        <a href="#" className="-m-1.5 p-1.5">
-          <span className="sr-only">Your Company</span>
-          <img
-            alt="logo"
-            src={`${
-              isScrolled ? "/favicon-c-dark.png" : "/favicon-c-white.png"
-            }`}
-            className="h-8 w-auto"
-          />
+        <a href="#" className="-m-1.5 p-1.5 flex items-end">
+          <div className="">
+            <span className="sr-only">Your Company</span>
+            <img
+              alt="logo"
+              src={`${
+                isScrolled ? "/favicon-c-dark.png" : "/favicon-c-white.png"
+              }`}
+              className="h-8 w-auto"
+            />
+          </div>
+          <span className="text-[10px] ml-2">par eXp</span>
         </a>
         <div className="flex flex-1 justify-end">
           <a
