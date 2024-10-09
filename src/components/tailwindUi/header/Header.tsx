@@ -66,7 +66,7 @@ export default function Example() {
             </button>
           </div>
         </div>
-        <a href="#" className="-m-1.5 p-1.5 flex items-end">
+        <a href="#" className="-m-1.5 p-1.5 flex items-center flex-col">
           <div className="">
             <span className="sr-only">Your Company</span>
             <img
@@ -77,7 +77,7 @@ export default function Example() {
               className="h-8 w-auto"
             />
           </div>
-          <span className="text-[10px] ml-2">par eXp</span>
+          <span className="text-[10px] mt-1x">par eXp</span>
         </a>
         <div className="flex flex-1 justify-end">
           <a
