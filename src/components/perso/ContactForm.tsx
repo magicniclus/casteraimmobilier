@@ -1,3 +1,4 @@
+import { addData } from "@/firebase/database";
 import { useState } from "react";
 
 const ContactForm = () => {
@@ -21,7 +22,7 @@ const ContactForm = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { name: string; value: string } }) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -59,7 +60,7 @@ const ContactForm = () => {
     return Object.values(newErrors).every((error) => error === "");
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (validate()) {
       setLoading(true);
@@ -67,7 +68,11 @@ const ContactForm = () => {
       setErrorMessage("");
 
       try {
-        const response = await fetch("/api/send-email", {
+        // Ajouter les données à Firebase
+        await addData("contactsAgence", formData);
+
+        // Envoyer les données à l'API pour l'envoi de l'email
+        const response = await fetch("/api/send", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -108,8 +113,8 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="w-full" id="contact">
-      <div className="w-full max-w-6xl mx-auto p-6 rounded-lg bg-white">
+    <section className="w-full mb-20" id="contact">
+      <div className="w-full max-w-6xl mx-auto p-6 py-12 rounded-lg bg-white">
         <div className="relative max-w-max mx-auto text-3xl">
           <h2 className="text-gray-700 text-center">
             <span className="sm:hidden block text-[#947a2f]/60 text-xl font-light font-updock">
