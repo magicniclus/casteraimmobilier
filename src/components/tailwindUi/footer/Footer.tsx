@@ -1,28 +1,27 @@
 /* eslint-disable @next/next/no-img-element */
 const navigation = {
-  solutions: [
-    { name: "Marketing", href: "#" },
-    { name: "Analytics", href: "#" },
-    { name: "Commerce", href: "#" },
-    { name: "Insights", href: "#" },
-  ],
-  support: [
-    { name: "Pricing", href: "#" },
-    { name: "Documentation", href: "#" },
-    { name: "Guides", href: "#" },
-    { name: "API Status", href: "#" },
-  ],
-  company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Jobs", href: "#" },
-    { name: "Press", href: "#" },
-    { name: "Partners", href: "#" },
-  ],
+  // solutions: [
+  //   { name: "Marketing", href: "#" },
+  //   { name: "Analytics", href: "#" },
+  //   { name: "Commerce", href: "#" },
+  //   { name: "Insights", href: "#" },
+  // ],
+  // support: [
+  //   { name: "Pricing", href: "#" },
+  //   { name: "Documentation", href: "#" },
+  //   { name: "Guides", href: "#" },
+  //   { name: "API Status", href: "#" },
+  // ],
+  // company: [
+  //   { name: "About", href: "#" },
+  //   { name: "Blog", href: "#" },
+  //   { name: "Jobs", href: "#" },
+  //   { name: "Press", href: "#" },
+  //   { name: "Partners", href: "#" },
+  // ],
   legal: [
-    { name: "Claim", href: "#" },
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
+    { name: "Politique de confidentialité", href: "/politique" },
+    { name: "Mentions légales", href: "/mentions-legales" },
   ],
   social: [
     {
@@ -101,7 +100,7 @@ export default function Footer({
       </h2>
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="space-y-8">
+          <div className="space-y-8 flex flex-col">
             <a href="#" className="-m-1.5 p-1.5 flex items-center flex-col">
               <div className="">
                 <span className="sr-only">Castéra</span>
@@ -114,10 +113,10 @@ export default function Footer({
               <span className="text-[10px] text-white mt-1">par eXp</span>
             </a>
             <p className="text-sm leading-6 text-gray-300">
-              Making the world a better place through constructing elegant
-              hierarchies.
+              Castera, Une vrai expertise immobilière sur Bordeaux et le bassin
+              d&apos;Arcachon.
             </p>
-            <div className="flex space-x-6">
+            {/* <div className="flex space-x-6">
               {navigation.social.map((item) => (
                 <a
                   key={item.name}
@@ -128,16 +127,16 @@ export default function Footer({
                   <item.icon className="h-6 w-6" aria-hidden="true" />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">
+                {/* <h3 className="text-sm font-semibold leading-6 text-white">
                   Solutions
-                </h3>
+                </h3> */}
                 <ul role="list" className="mt-6 space-y-4">
-                  {navigation.solutions.map((item) => (
+                  {/* {navigation.solutions.map((item) => (
                     <li key={item.name}>
                       <a
                         href={item.href}
@@ -146,15 +145,15 @@ export default function Footer({
                         {item.name}
                       </a>
                     </li>
-                  ))}
+                  ))} */}
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-white">
+                {/* <h3 className="text-sm font-semibold leading-6 text-white">
                   Support
-                </h3>
+                </h3> */}
                 <ul role="list" className="mt-6 space-y-4">
-                  {navigation.support.map((item) => (
+                  {/* {navigation.support.map((item) => (
                     <li key={item.name}>
                       <a
                         href={item.href}
@@ -163,17 +162,17 @@ export default function Footer({
                         {item.name}
                       </a>
                     </li>
-                  ))}
+                  ))} */}
                 </ul>
               </div>
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">
+                {/* <h3 className="text-sm font-semibold leading-6 text-white">
                   Company
-                </h3>
+                </h3> */}
                 <ul role="list" className="mt-6 space-y-4">
-                  {navigation.company.map((item) => (
+                  {/* {navigation.company.map((item) => (
                     <li key={item.name}>
                       <a
                         href={item.href}
@@ -182,7 +181,7 @@ export default function Footer({
                         {item.name}
                       </a>
                     </li>
-                  ))}
+                  ))} */}
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
@@ -207,7 +206,7 @@ export default function Footer({
         </div>
         <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
           <p className="text-xs leading-5 text-gray-400">
-            &copy; 2020 Your Company, Inc. All rights reserved.
+            &copy; 2024 Castera-immobilier, Inc. All rights reserved.
           </p>
         </div>
       </div>
