@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 const Qui = () => {
   return (
-    <section className="w-full">
+    <section className="w-full" id="who">
       <div className="w-full max-w-6xl mx-auto py-16 px-4">
         <div className="flex flex-col items-center lg:flex-row">
           <div className="relative flex items-center lg:w-5/12 w-full">
