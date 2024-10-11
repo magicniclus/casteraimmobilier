@@ -114,7 +114,7 @@ const Selection = () => {
         </div>
         <div className="w-full flex justify-center">
           <a
-            href="#"
+            href="#contact"
             className="p-4 px-4 text-white text-sm rounded-lg bg-[#947a2f] mx-auto mt-12 hover:text-[#947a2f] hover:bg-white hover:border hover:border-[#947a2f] transition duration-300 ease-in-out"
           >
             Vous souhaitez obtenir une estimation ?
