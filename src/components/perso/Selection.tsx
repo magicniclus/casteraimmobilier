@@ -47,7 +47,7 @@ const contain = [
     image:
       "https://d36vnx92dgl2c5.cloudfront.net/prod/Marui/3311/media/22af83d33bff6cdb3333002a953bd9de.webp",
     prix: "465 000",
-    title: "Echoppe Bordelaisex",
+    title: "Echoppe Bordelaise",
     pieces: "4",
     taille: "114",
     link: "https://www.expfrance.fr/fr/propriete/vente+maison+bordeaux+echoppe-bordelaise-t4-114-m-+82435409",
@@ -66,7 +66,7 @@ const contain = [
 const Selection = () => {
   return (
     <section className="w-full">
-      <div className="max-w-6xl mx-auto w-full py-32 px-4">
+      <div className="max-w-6xl mx-auto w-full py-20 px-4">
         <div className="relative max-w-max mx-auto text-3xl">
           <h2 className="text-gray-700 text-center">
             <span className="sm:hidden block text-gray-700/60 text-xl font-light font-updock ">
@@ -75,7 +75,7 @@ const Selection = () => {
             Selection d&apos;annonce
           </h2>
           <h3 className="font-light font-updock text-[#947a2f]/60 absolute -right-10 -bottom-7 sm:block hidden">
-            Le meilleur
+            Les meilleurs
           </h3>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
@@ -83,6 +83,7 @@ const Selection = () => {
             <a
               href={item.link}
               key={index}
+              target="blank"
               className=" rounded-lg overflow-hidden transition-shadow duration-300 relative group"
             >
               <div className="absolute top-2 left-2 rounded-full p-1 bg-gray-700 text-white text-xs px-2">
@@ -98,7 +99,7 @@ const Selection = () => {
               />
               <div className="py-4">
                 <p className="text-[#947a2f] mt-2">{item.prix} €</p>
-                <h4 className="text-lg font-semibold text-gray-800">
+                <h4 className="text-lg font-semibold text-gray-700">
                   {item.title}
                 </h4>
                 <div className="flex text-sm">
