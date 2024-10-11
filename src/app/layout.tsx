@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-page-custom-font */
 import { StoreProvider } from "@/redux/StoreProvider";
 import { GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
