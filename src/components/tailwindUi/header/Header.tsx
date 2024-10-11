@@ -7,14 +7,15 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
 
 const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Company", href: "#" },
+  { name: "Notre selection", href: "#products" },
+  { name: "Qui sommes-nous ?", href: "#who" },
+  { name: "Nous contactez", href: "#contact" },
 ];
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,11 +32,19 @@ export default function Example() {
     };
   }, []);
 
+  useEffect(() => {
+    // Déclencher l'animation après un court délai
+    const timer = setTimeout(() => setIsLoaded(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <header
       className={`fixed w-full z-50 transition-colors duration-300 font-poppins font-light ${
         isScrolled ? "bg-white/95" : "bg-transparent"
-      }`}
+      } ${
+        isLoaded ? "opacity-100" : "opacity-0 translate-y-[-10px]"
+      } transition-all duration-700`}
     >
       <nav
         aria-label="Global"
@@ -49,7 +58,7 @@ export default function Example() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-sm font-semibold leading-6"
+                className="text-sm font-semibold leading-6 hover:text-[#947a2f] transition duration-300 ease-in-out"
               >
                 {item.name}
               </a>
@@ -108,7 +117,7 @@ export default function Example() {
               </button>
             </div>
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
+              <span className="sr-only">Castera immobilier</span>
               <img alt="" src="/favicon-c-dark.png" className="h-8 w-auto" />
             </a>
             <div className="flex flex-1 justify-end">
