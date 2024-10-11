@@ -2,7 +2,6 @@ import { format } from "date-fns";
 import { fr } from "date-fns/locale";
 import * as React from "react";
 
-// Définition de l'interface pour les props
 interface EmailTemplateProps {
   name: string;
   email: string;
@@ -11,7 +10,6 @@ interface EmailTemplateProps {
   message: string;
 }
 
-// Ajout du formatage pour inclure l'heure
 const currentDate = format(new Date(), "dd/MM/yyyy HH:mm", { locale: fr });
 
 export const EmailTemplate: React.FC<EmailTemplateProps> = ({
