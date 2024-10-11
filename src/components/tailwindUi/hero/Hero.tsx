@@ -72,7 +72,7 @@ const Hero = () => {
         </div>
         <a
           ref={buttonRef}
-          href="#"
+          href="#contact"
           className="px-6 py-2 border border-[#947a2f] bg-[#947a2f] rounded-full text-white text-base mt-10 hover:border-[#947a2f] hover:bg-white hover:text-[#947a2f] transition duration-300 ease-in-out z-20"
         >
           Prendre rendez-vous
