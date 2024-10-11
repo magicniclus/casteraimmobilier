@@ -50,7 +50,7 @@ const Hero = () => {
   return (
     <section className="w-full relative min-h-[500px] z-0 bg-white">
       <img
-        src="https://files.oaiusercontent.com/file-FwXMalx9g1o34c6UStn0cZvc?se=2024-10-09T09%3A09%3A29Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Daa9080a7-2297-4814-90ba-7daf2bf744fe.webp&sig=hbfNmok434Mqjm43rMB0/82SncFkDDj/pb0avWXm6pM%3D"
+        src="/bg.jpg"
         alt="background"
         className="w-full h-full absolute top-0 right-0 object-cover rounded-b-[40px] z-0"
       />
@@ -59,7 +59,7 @@ const Hero = () => {
         <div className="relative mt-10">
           <h1 ref={h1Ref} className="px-2">
             <span className="sm:hidden block text-white/60 text-xl font-light font-updock">
-              Castera
+              Agence Castera
             </span>
             Agence Immobilière <br /> Bordeaux et Bassin d&apos;Arcachon{" "}
           </h1>
@@ -67,7 +67,7 @@ const Hero = () => {
             ref={h2Ref}
             className="font-light font-updock text-white/60 absolute -right-0 sm:-right-10 -bottom-7 sm:block hidden"
           >
-            Castera
+            Agence Castera
           </h2>
         </div>
         <a
