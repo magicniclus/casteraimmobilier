@@ -1,5 +1,6 @@
 "use client";
 
+import ContactForm from "@/components/perso/ContactForm";
 import Paralax from "@/components/perso/Paralax";
 import Qui from "@/components/perso/Qui";
 import Selection from "@/components/perso/Selection";
@@ -38,6 +39,7 @@ export default function Home() {
         <Selection />
         <Paralax />
         <Qui />
+        <ContactForm />
       </main>
       <Footer />
     </>
