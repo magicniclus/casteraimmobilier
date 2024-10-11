@@ -65,17 +65,17 @@ const contain = [
 
 const Selection = () => {
   return (
-    <section className="w-full">
+    <section className="w-full" id="products">
       <div className="max-w-6xl mx-auto w-full py-20 px-4">
         <div className="relative max-w-max mx-auto text-3xl">
           <h2 className="text-gray-700 text-center">
-            <span className="sm:hidden block text-gray-700/60 text-xl font-light font-updock ">
-              le meilleur
+            <span className="sm:hidden block text-[#947a2f]/60 text-xl font-light font-updock ">
+              Pestige
             </span>
             Selection d&apos;annonce
           </h2>
           <h3 className="font-light font-updock text-[#947a2f]/60 absolute -right-10 -bottom-7 sm:block hidden">
-            Les meilleurs
+            Pestige
           </h3>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
