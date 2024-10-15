@@ -75,7 +75,7 @@ export default function Example() {
             </button>
           </div>
         </div>
-        <a href="#" className="-m-1.5 p-1.5 flex items-center flex-col">
+        <a href="/" className="-m-1.5 p-1.5 flex items-center flex-col">
           <div className="">
             <span className="sr-only">Your Company</span>
             <img
@@ -116,7 +116,7 @@ export default function Example() {
                 <XMarkIcon aria-hidden="true" className="h-6 w-6" />
               </button>
             </div>
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Castera immobilier</span>
               <img alt="" src="/favicon-c-dark.png" className="h-8 w-auto" />
             </a>
