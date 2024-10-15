@@ -27,14 +27,14 @@ const Paralax = () => {
         className="flex flex-col items-center justify-center w-full py-10 px-4"
       >
         <div className="bg-slate-900/70 absolute top-0 left-0 w-full h-full"></div>
-        <div className="relative max-w-max mx-auto text-2xl text-center sm:text-3xl z-60 p-4">
+        <div className="relative max-w-max mx-auto text-3xl text-center sm:text-3xl z-60 p-4">
           <span className="sm:hidden block text-white/60 text-xl font-light font-updock">
             Experience
           </span>
           <h2 className="text-white text-center">
             Inspirez par les différences
           </h2>
-          <h3 className="font-light font-updock text-[#947a2f]/60 md:text-white/60 absolute -right-10 -bottom-7 sm:block hidden">
+          <h3 className="font-light font-updock text-[#947a2f]/60 md:text-white/60 absolute -right-10 -bottom-3 sm:block hidden">
             Experience
           </h3>
         </div>
