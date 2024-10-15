@@ -1,7 +1,9 @@
 import { addData } from "@/firebase/database";
+import { useRouter } from "next/navigation"; // Importer useRouter
 import { useState } from "react";
 
 const ContactForm = () => {
+  const router = useRouter(); // Initialiser le router
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -97,6 +99,9 @@ const ContactForm = () => {
             postalCode: "",
             message: "",
           });
+
+          // Redirection vers la page /merci après un envoi réussi
+          router.push("/merci");
         } else {
           setErrorMessage(
             data.message || "Erreur lors de l'envoi du formulaire"
