@@ -5,12 +5,13 @@ import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  databaseURL:
+    "https://avenue-immo-default-rtdb.europe-west1.firebasedatabase.app",
+  authDomain: "avenue-immo.firebaseapp.com",
+  projectId: "avenue-immo",
+  storageBucket: "avenue-immo.appspot.com",
+  messagingSenderId: "1095138669993",
+  appId: "1:1095138669993:web:124e0ff01a333b191d80b8",
 };
 
 // Vérifier si Firebase a déjà été initialisé
