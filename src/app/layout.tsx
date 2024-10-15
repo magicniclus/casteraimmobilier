@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-page-custom-font */
-import { StoreProvider } from "@/redux/StoreProvider";
 import { GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Poppins, Updock } from "next/font/google";
@@ -30,20 +29,18 @@ export default function RootLayout({
 }>) {
   const GTM = process.env.NEXT_PUBLIC_GTM_ID ?? "";
   return (
-    <StoreProvider>
-      <html lang="fr">
-        <head>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-            rel="stylesheet"
-          />
-          <link rel="icon" href="/favicon.png" sizes="any" />
-        </head>
-        <body className={`${poppins.className}`}>{children}</body>
-        <GoogleTagManager gtmId={GTM} />
-      </html>
-    </StoreProvider>
+    <html lang="fr">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="icon" href="/favicon.png" sizes="any" />
+      </head>
+      <body className={`${poppins.className}`}>{children}</body>
+      <GoogleTagManager gtmId={GTM} />
+    </html>
   );
 }
