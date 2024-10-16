@@ -19,9 +19,9 @@ const updock = Updock({
 
 export const metadata: Metadata = {
   title:
-    "Agence Castera, agence immobilière à Bordeaux et sur la bassin d'Arcachon",
+    "Agence Castera, agence immobilière à Bordeaux et sur le bassin d'Arcachon",
   description:
-    "Vendez, achetez, faite vous accompagner par un expert dans votre secteur.",
+    "Vendez, achetez, faites-vous accompagner par un expert dans votre secteur.",
 };
 
 export default function RootLayout({
@@ -30,6 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const GTM = process.env.NEXT_PUBLIC_GTM_ID ?? "";
+
   return (
     <html lang="fr">
       <head>
@@ -40,6 +41,21 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <link rel="icon" href="/favicon.png" sizes="any" />
+        {/* Google Tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16741644311"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-16741644311');
+            `,
+          }}
+        />
       </head>
       <body className={`${poppins.className}`}>{children}</body>
       <GoogleTagManager gtmId={GTM} />
